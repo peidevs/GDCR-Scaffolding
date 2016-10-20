@@ -1,0 +1,12 @@
+
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+
+    compile 'junit:junit:4.12'
+}
