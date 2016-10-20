@@ -7,7 +7,8 @@
 * Search online repository: `docker search mono`
 * Pull the Mono image: `docker pull mono` 
 * Confirm the new image: `docker images`
-* set `MY_SRC_HOME` to be appropriate directory
+* set `MY_SRC_HOME` to be appropriate directory on your computer
+* execute the following (one command at a time):
 
 <pre>
 docker run -i -t -v $MY_SRC_HOME:/data mono:latest
