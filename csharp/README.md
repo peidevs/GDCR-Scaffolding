@@ -11,10 +11,11 @@
 * execute the following (one command at a time):
 
 <pre>
-docker run -i -t -v $MY_SRC_HOME:/data mono:latest
+cd $MY_SRC_HOME
+docker build -t="gdcr/csharp" .
+docker run -i -t -v $MY_SRC_HOME:/data gdcr/csharp 
 cd /data
-chmod 744 ./setup.sh ./run_tests.sh
-./setup.sh
+chmod 744 ./run_tests.sh
 </pre>
 
 ## To run tests
