@@ -3,7 +3,7 @@
 
 import unittest
 
-from cell import Cell
+from life.cell import Cell
 
 class CellCase(unittest.TestCase):
     def test_canary(self):

@@ -5,5 +5,4 @@
 
 ## To run tests
 
-* `chmod 744 run_tests.sh`
-* `./run_tests.sh`
+* `python test_cell.py`
