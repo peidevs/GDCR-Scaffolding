@@ -1,8 +1,6 @@
 
 // http://peidevs.github.io
 
-package org.peidevs
-
 import kotlin.test.assertEquals
 import org.junit.Test
 
