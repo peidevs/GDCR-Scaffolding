@@ -1,8 +1,6 @@
 
 // http://peidevs.github.io
 
-package org.peidevs
-
 import org.junit.*
 import static org.junit.Assert.*
 
