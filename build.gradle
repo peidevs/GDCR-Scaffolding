@@ -1,2 +1,28 @@
-// This is a place-holder for a multi-project build,
-// so that we can run tests for Gradle projects on Travis-CI.
+// We use a multi-project build to run tests on Travis-CI.
+// Non-Gradle projects are configured here, so we can execute command-line stuff.
+
+def addShellPrefix = { command ->
+    def commandArray = new String[3]
+    commandArray[0] = "sh"
+    commandArray[1] = "-c"
+    commandArray[2] = command
+    return commandArray
+}
+
+def runCommand = { command, workingDir ->
+    def process = new ProcessBuilder(addShellPrefix(command))
+                                    .directory(workingDir)
+                                    .redirectErrorStream(true) 
+                                    .start()
+    process.inputStream.eachLine {println it}
+    process.waitFor()
+    return process.exitValue()
+}
+
+configure(subprojects.find {it.name == 'python'}) {
+    task test << {
+        def retVal = runCommand("python test_gol.py", projectDir)
+        assert retVal == 0
+        println "tests passed"
+    }
+}
