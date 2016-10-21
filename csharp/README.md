@@ -13,7 +13,7 @@
 <pre>
 cd $MY_SRC_HOME
 docker build -t="gdcr/csharp" .
-docker run -i -t -v $MY_SRC_HOME:/data gdcr/csharp 
+docker run --rm -i -t -v $(pwd):/data gdcr/csharp 
 cd /data
 chmod 744 ./run_tests.sh
 </pre>
