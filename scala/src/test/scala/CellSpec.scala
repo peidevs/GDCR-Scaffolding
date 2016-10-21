@@ -1,8 +1,6 @@
 
 // http://peidevs.github.io
 
-package org.peidevs
-
 import org.specs2.mutable._
 
 class CellSpec extends Specification {
