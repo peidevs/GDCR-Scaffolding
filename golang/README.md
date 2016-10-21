@@ -12,15 +12,15 @@
 
 <pre>
 cd $MY_SRC_HOME
-docker run -i -t -v $MY_SRC_HOME:/data golang
-cd /data
+docker run --rm -it -v $(pwd):/go golang
+cd /go/src/life
 </pre>
 
 ## To run tests
 
-* `go test life`
+* `go test`
 
 ## To run main program
 
-* `go install life`
-* `./bin/life`
+* `go install`
+* `life`
