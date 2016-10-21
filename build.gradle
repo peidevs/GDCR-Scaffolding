@@ -26,3 +26,11 @@ configure(subprojects.find {it.name == 'python'}) {
         println "tests passed"
     }
 }
+
+configure(subprojects.find {it.name == 'ruby'}) {
+    task test << {
+        def retVal = runCommand("rake test", projectDir)
+        assert retVal == 0
+        println "tests passed"
+    }
+}
