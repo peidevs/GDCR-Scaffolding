@@ -1,3 +1,4 @@
+// For Travis-CI
 // We use a multi-project build to run tests on Travis-CI.
 // Non-Gradle projects are configured here, so we can execute command-line stuff.
 
