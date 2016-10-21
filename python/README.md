@@ -5,5 +5,5 @@
 
 ## To run tests
 
-* `python test_cell.py`
-* or `python3 test_cell.py`
+* `python test_gol.py`
+* or `python3 test_gol.py`
