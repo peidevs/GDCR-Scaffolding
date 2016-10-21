@@ -5,4 +5,4 @@
 
 ## To run tests
 
-* `lein.sh test`
+* `lein.sh test` or `lein test` (if using Homebrew or such)
