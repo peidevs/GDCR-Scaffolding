@@ -24,6 +24,9 @@ static char * all_tests() {
     mu_run_test(test_foo);
     return 0;
 }
+
+/* ---------------------------- */
+/* main */
  
 int main(int argc, char **argv) {
     char *result = all_tests();
