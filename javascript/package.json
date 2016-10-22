@@ -1,0 +1,14 @@
+{
+  "name": "bobdole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "karma": "^1.3.0"
+  }
+}
