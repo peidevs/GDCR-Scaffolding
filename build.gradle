@@ -26,7 +26,7 @@ configure(subprojects.find {it.name == 'javascript'}) {
     task test << {
         def retVal = runCommand("npm run test-single-run", projectDir)
         assert retVal == 0
-        println "TRACER [${it.name}] tests passed"
+        println "TRACER javascript tests passed"
     }
 }
 
@@ -34,7 +34,7 @@ configure(subprojects.find {it.name == 'python'}) {
     task test << {
         def retVal = runCommand("python test_gol.py", projectDir)
         assert retVal == 0
-        println "TRACER [${it.name}] tests passed"
+        println "TRACER python tests passed"
     }
 }
 
@@ -42,7 +42,7 @@ configure(subprojects.find {it.name == 'ruby'}) {
     task test << {
         def retVal = runCommand("rake test", projectDir)
         assert retVal == 0
-        println "TRACER [${it.name}] tests passed"
+        println "TRACER ruby tests passed"
     }
 }
 
