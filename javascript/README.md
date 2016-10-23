@@ -2,9 +2,10 @@
 ## Requirements
 
 * install [Node JS](https://nodejs.org/en/download/)
-* install karma
-    * `npm install karma --save-dev`
+* run `npm install`
 
 ## To run tests
 
-* `karma start karma.config.js`
+* `npm run test`
+
+Running the tests will continuously monitor for file changes and re-run all tests when that occurs.
