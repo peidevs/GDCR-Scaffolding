@@ -20,18 +20,22 @@ def runCommand = { command, workingDir ->
     return process.exitValue()
 }
 
-configure(subprojects.find {it.name == 'python'}) {
-    task test << {
-        def retVal = runCommand("python test_gol.py", projectDir)
-        assert retVal == 0
-        println "tests passed"
-    }
-}
+configgure(subprojects.each { project ->
+    def testCommand = null
 
-configure(subprojects.find {it.name == 'ruby'}) {
-    task test << {
-        def retVal = runCommand("rake test", projectDir)
-        assert retVal == 0
-        println "tests passed"
+    if (project.name == 'javascript') {
+        testCommand = "npm run test-single-run"
+    } else if (project.name == 'python') {
+        testCommand = "python test_gol.py"
+    } else if (project.name == 'ruby') {
+        testCommand = "rake test"
     }
-}
+
+    if (testCommand != null) {
+       task test << {
+            def retVal = runCommand(testCommand, projectDir)
+            assert retVal == 0
+            println "TRACER ${project.name} : tests passed"
+        }
+    }
+})

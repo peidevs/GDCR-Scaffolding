@@ -16,8 +16,9 @@
     "karma-phantomjs-launcher": "^1.0.2"
   },
   "scripts": {
-    "test": "karma start karma.config.js"
+    "test": "karma start karma.config.js",
+    "test-single-run": "karma start karma.config.js --single-run"
   },
-  "author": "Michael Easter",
+  "author": "PEI Devs",
   "license": "ISC"
 }
