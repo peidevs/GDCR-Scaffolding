@@ -20,13 +20,21 @@ def runCommand = { command, workingDir ->
     return process.exitValue()
 }
 
-println "TRACER ---------------------- RESTORE OCT 22 18:07 "
+println "TRACER ---------------------- OCT 22 18:09 sanity check"
+
+configure(subprojects.find {it.name == 'javascript'}) {
+    task test << {
+        def retVal = runCommand("npm run test-single-run", projectDir)
+        assert retVal == 0
+        println "TRACER [${it.name}] tests passed"
+    }
+}
 
 configure(subprojects.find {it.name == 'python'}) {
     task test << {
         def retVal = runCommand("python test_gol.py", projectDir)
         assert retVal == 0
-        println "tests passed"
+        println "TRACER [${it.name}] tests passed"
     }
 }
 
@@ -34,33 +42,7 @@ configure(subprojects.find {it.name == 'ruby'}) {
     task test << {
         def retVal = runCommand("rake test", projectDir)
         assert retVal == 0
-        println "tests passed"
+        println "TRACER [${it.name}] tests passed"
     }
 }
 
-/*
-
-def runTestCommand = { testCommand, dir, name ->
-    def retVal = runCommand(testCommand, dir)
-    assert retVal == 0
-    println "TRACER ${name} : tests passed"
-}
-
-configure(subprojects.find {it.name == 'javascript'}) {
-    task test << {
-        runTestCommand("npm run test-single-run", projectDir, it.name)
-    }
-}
-
-configure(subprojects.find {it.name == 'python'}) {
-    task test << {
-        runTestCommand("python test_gol.py", projectDir, it.name)
-    }
-}
-
-configure(subprojects.find {it.name == 'ruby'}) {
-    task test << {
-        runTestCommand("rake test", projectDir, it.name)
-    }
-}
-*/
