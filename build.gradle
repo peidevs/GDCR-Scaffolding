@@ -28,18 +28,18 @@ def runTestCommand = { testCommand, dir, name ->
 
 configure(subprojects.find {it.name == 'javascript'}) {
     task test << {
-        runTestCommand("npm run test-single-run", projectDir, project.name)
+        runTestCommand("npm run test-single-run", projectDir, it.name)
     }
 }
 
 configure(subprojects.find {it.name == 'python'}) {
     task test << {
-        runTestCommand("python test_gol.py", projectDir, project.name)
+        runTestCommand("python test_gol.py", projectDir, it.name)
     }
 }
 
 configure(subprojects.find {it.name == 'ruby'}) {
     task test << {
-        runTestCommand("rake test", projectDir, project.name)
+        runTestCommand("rake test", projectDir, it.name)
     }
 }
