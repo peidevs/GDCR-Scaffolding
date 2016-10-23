@@ -20,7 +20,7 @@ def runCommand = { command, workingDir ->
     return process.exitValue()
 }
 
-println "TRACER ---------------------- OCT 22 sanity check attempt 1835"
+println "TRACER ---------------------- OCT 22 sanity check attempt 1844"
 
 configure(subprojects.find {it.name == 'javascript'}) {
     task check << {
