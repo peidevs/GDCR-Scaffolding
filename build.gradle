@@ -24,7 +24,9 @@ println "TRACER ---------------------- OCT 22 18:09 sanity check"
 
 configure(subprojects.find {it.name == 'javascript'}) {
     task check << {
-        def retVal = runCommand("npm run test-single-run", projectDir)
+        def retVal = runCommand("npm install", projectDir)
+        assert retVal == 0
+        retVal = runCommand("npm run test-single-run", projectDir)
         assert retVal == 0
         println "TRACER javascript tests passed"
     }
