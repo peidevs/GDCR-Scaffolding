@@ -20,7 +20,7 @@ def runCommand = { command, workingDir ->
     return process.exitValue()
 }
 
-configgure(subprojects.each { project ->
+configure(subprojects.each { project ->
     def testCommand = null
 
     if (project.name == 'javascript') {
