@@ -34,12 +34,12 @@ configure(subprojects.find {it.name == 'javascript'}) {
 
 configure(subprojects.find {it.name == 'python'}) {
     task test << {
-        runTestCommand "python test_gol.py", projectDir, project.name)
+        runTestCommand("python test_gol.py", projectDir, project.name)
     }
 }
 
 configure(subprojects.find {it.name == 'ruby'}) {
     task test << {
-        runTestCommand "rake test", projectDir, project.name)
+        runTestCommand("rake test", projectDir, project.name)
     }
 }
