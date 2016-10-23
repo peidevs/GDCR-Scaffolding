@@ -20,7 +20,7 @@ def runCommand = { command, workingDir ->
     return process.exitValue()
 }
 
-println "TRACER ---------------------- OCT 22 sanity check attempt 1844"
+println "TRACER ---------------------- "
 
 configure(subprojects.find {it.name == 'javascript'}) {
     task check << {
@@ -40,6 +40,7 @@ configure(subprojects.find {it.name == 'python'}) {
     }
 }
 
+/*
 configure(subprojects.find {it.name == 'ruby'}) {
     task check << {
         def retVal = runCommand("rake test", projectDir)
@@ -47,4 +48,5 @@ configure(subprojects.find {it.name == 'ruby'}) {
         println "TRACER ruby tests passed"
     }
 }
+*/
 
