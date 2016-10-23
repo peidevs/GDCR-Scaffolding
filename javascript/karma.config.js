@@ -42,12 +42,14 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+/*
     customLaunchers: {
         Chrome_travis_ci: {
           base: 'Chrome',
           flags: ['--no-sandbox']
         }
     },
+*/
 
     // Start these browsers, currently available:
     // - Chrome
