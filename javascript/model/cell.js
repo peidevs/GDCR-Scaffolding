@@ -1,8 +1,7 @@
 
 // http://peidevs.github.io
 
-class Cell {
-    constructor(options) {
-        this.foo = options.foo;
-    }
-}
+var Cell = function(options) {
+    this.foo = options.foo;
+};
+
