@@ -20,26 +20,26 @@ def runCommand = { command, workingDir ->
     return process.exitValue()
 }
 
-def runTestCommand = { command ->
-    def retVal = runCommand(testCommand, projectDir)
+def runTestCommand = { testCommand, dir, name ->
+    def retVal = runCommand(testCommand, dir)
     assert retVal == 0
-    println "TRACER ${project.name} : tests passed"
+    println "TRACER ${name} : tests passed"
 }
 
 configure(subprojects.find {it.name == 'javascript'}) {
     task test << {
-        runTestCommand "npm run test-single-run"
+        runTestCommand("npm run test-single-run", projectDir, project.name)
     }
 }
 
 configure(subprojects.find {it.name == 'python'}) {
     task test << {
-        runTestCommand "python test_gol.py"
+        runTestCommand "python test_gol.py", projectDir, project.name)
     }
 }
 
 configure(subprojects.find {it.name == 'ruby'}) {
     task test << {
-        runTestCommand "rake test"
+        runTestCommand "rake test", projectDir, project.name)
     }
 }
