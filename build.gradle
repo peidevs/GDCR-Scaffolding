@@ -20,6 +20,26 @@ def runCommand = { command, workingDir ->
     return process.exitValue()
 }
 
+println "TRACER ---------------------- RESTORE OCT 22 18:07 "
+
+configure(subprojects.find {it.name == 'python'}) {
+    task test << {
+        def retVal = runCommand("python test_gol.py", projectDir)
+        assert retVal == 0
+        println "tests passed"
+    }
+}
+
+configure(subprojects.find {it.name == 'ruby'}) {
+    task test << {
+        def retVal = runCommand("rake test", projectDir)
+        assert retVal == 0
+        println "tests passed"
+    }
+}
+
+/*
+
 def runTestCommand = { testCommand, dir, name ->
     def retVal = runCommand(testCommand, dir)
     assert retVal == 0
@@ -43,3 +63,4 @@ configure(subprojects.find {it.name == 'ruby'}) {
         runTestCommand("rake test", projectDir, it.name)
     }
 }
+*/
