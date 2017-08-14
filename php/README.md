@@ -1,16 +1,19 @@
 
-## Requirements
+### Info
+
+* uses [this](https://hub.docker.com/r/phpunit/phpunit/) Docker image
+    * as of AUG 2017, uses PHPUnit 6.0.x and PHP 7.0
+
+### Setup
 
 * install Docker
 * in Docker window, `cd` to appropriate directory
-* set `MY_SRC_HOME=$PWD`
 
 <pre>
 docker pull phpunit/phpunit
-cd $MY_SRC_HOME
 chmod 744 ./run_tests.sh
 </pre>
 
-## To run tests
+### To run tests
 
 * `./run_tests.sh`

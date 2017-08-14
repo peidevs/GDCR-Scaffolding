@@ -1,7 +1,11 @@
 <?php
+declare(strict_types=1);
+
+use PHPUnit\Framework\TestCase;
+
 require 'Cell.php';
 
-class CellTest extends PHPUnit_Framework_TestCase {
+class CellTest extends TestCase {
      public function testCanary() {
         $cell = new Cell;
         $result = $cell->foo(5150);
