@@ -2,11 +2,11 @@
 apply plugin: 'scala'
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    compile 'org.scala-lang:scala-library:2.11.1'
+    compile 'org.scala-lang:scala-library:2.12.3'
 
     testCompile group: 'org.specs2', name: 'specs2_2.11.0-RC3', version: '2.3.10'
 }
