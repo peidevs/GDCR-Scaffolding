@@ -5,18 +5,17 @@
 
 | Language     | Last Validated |
 | -------------|:-------------:|
-| c            | 22-OCT-2017 |
-| clojure      | 22-OCT-2017 |
-| csharp       | 22-OCT-2017 |
-| frege        | 2016 |
-| golang       | 2016 |
-| groovy       | 2016 |
-| java         | 2016 |
-| javascript   | 2016 |
-| kotlin       | 2016 |
-| php          | 2016 |
-| python       | 2016 |
-| ruby         | 2016 |
-| scala        | 2016 |
-| swift3       | 2016 |
+| C            | 22-OCT-2017 |
+| Clojure      | 22-OCT-2017 |
+| C#           | 22-OCT-2017 |
+| golang       | 22-OCT-2017 |
+| Groovy       | 22-OCT-2017 |
+| Java         | 22-OCT-2017 |
+| JavaScript   | 22-OCT-2017 |
+| Kotlin       | 22-OCT-2017 |
+| PHP          | 22-OCT-2017 |
+| Python       | 22-OCT-2017 |
+| Ruby         | 22-OCT-2017 |
+| Scala        | 2016 |
+| Swift3       | 2016 |
 
