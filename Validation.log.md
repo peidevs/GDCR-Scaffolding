@@ -1,12 +1,13 @@
 
 ### Validation
 
+* validation is simply following the docs and ensuring the tests pass
+
 | Language     | Last Validated |
 | -------------|:-------------:|
-| c            | 2016 |
-| ceylon       | 2016 |
-| clojure      | 2016 |
-| csharp       | 2016 |
+| c            | 22-OCT-2017 |
+| clojure      | 22-OCT-2017 |
+| csharp       | 22-OCT-2017 |
 | frege        | 2016 |
 | golang       | 2016 |
 | groovy       | 2016 |
