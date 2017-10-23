@@ -18,4 +18,5 @@
 | Ruby         | 22-OCT-2017 |
 | Scala        | 2016 |
 | Swift3       | 2016 |
+| TypeScript   | 22-OCT-2017 |
 
