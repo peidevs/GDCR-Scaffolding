@@ -1,15 +1,15 @@
 
-// http://peidevs.github.io
+import org.specs2.mutable.Specification
+import org.junit.runner.RunWith
+import org.specs2.runner.JUnitRunner
 
-import org.specs2.mutable._
-
+@RunWith(classOf[JUnitRunner])
 class CellSpec extends Specification {
     var cell = new Cell(5150)
     
-    "cell" can {
+    "cell" should {
         "be a canary" in {
-            cell.foo mustEqual 5150
+            cell.foo must beEqualTo(5150)
         }
     }
 }
-

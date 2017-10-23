@@ -16,7 +16,7 @@
 | PHP          | 22-OCT-2017 |
 | Python       | 22-OCT-2017 |
 | Ruby         | 22-OCT-2017 |
-| Scala        | 2016 |
+| Scala        | 23-OCT-2017 |
 | Swift3       | 2016 |
 | TypeScript   | 22-OCT-2017 |
 
