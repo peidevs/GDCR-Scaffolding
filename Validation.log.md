@@ -17,6 +17,6 @@
 | Python       | 22-OCT-2017 |
 | Ruby         | 22-OCT-2017 |
 | Scala        | 23-OCT-2017 |
-| Swift3       | 2016 |
+| Swift        | 23-OCT-2017 |
 | TypeScript   | 22-OCT-2017 |
 
