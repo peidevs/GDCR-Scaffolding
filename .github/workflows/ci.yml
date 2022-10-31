@@ -77,3 +77,15 @@ jobs:
       - name: run unit tests
         run: rake test
         working-directory: ruby
+
+  test-c:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: run unit tests
+        run: ./run_tests.sh
+        working-directory: c
