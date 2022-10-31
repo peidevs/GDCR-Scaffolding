@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/peidevs/GDCR-Scaffolding.svg?branch=master)](https://travis-ci.org/peidevs/GDCR-Scaffolding)
 
 ## GDCR-Scaffolding
 Starter projects in various languages for [Global Day of Coderetreat](http://globalday.coderetreat.org/)
