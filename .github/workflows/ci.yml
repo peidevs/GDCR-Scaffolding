@@ -13,7 +13,6 @@ permissions:
 
 jobs:
   test-groovy:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -34,7 +33,6 @@ jobs:
         working-directory: groovy
 
   test-java:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -55,7 +53,6 @@ jobs:
         working-directory: java
 
   test-python:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -67,7 +64,6 @@ jobs:
         working-directory: python
 
   test-ruby:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -79,7 +75,6 @@ jobs:
         working-directory: ruby
 
   test-c:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -89,3 +84,17 @@ jobs:
       - name: run unit tests
         run: ./run_tests.sh
         working-directory: c
+
+  test-golang:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: get Go 
+        uses: actions/setup-go@v3
+
+      - name: run unit tests
+        run: go test
+        working-directory: golang
