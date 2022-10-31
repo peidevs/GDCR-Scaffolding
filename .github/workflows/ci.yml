@@ -123,25 +123,28 @@ jobs:
         run: lein test
         working-directory: clojure
 
-  test-csharp:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: get code
-        uses: actions/checkout@v3
-
-      - name: setup dotnet core
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '3.1.x'
-
-      - name: run unit tests
-        run: ./run_tests.sh
-        working-directory: csharp
-
 # --------------------------------------
 
+# not working: project is based on ancient Mono and not Dotnet Core (!!)
+#
+#  test-csharp:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: get code
+#        uses: actions/checkout@v3
+#
+#      - name: setup dotnet core
+#        uses: actions/setup-dotnet@v3
+#        with:
+#          dotnet-version: '3.1.x'
+#
+#      - name: run unit tests
+#        run: ./run_tests.sh
+#        working-directory: csharp
+
 # not working due to ancient project layout (not supported)
+#
 #  test-swift:
 #    runs-on: ubuntu-latest
 #
