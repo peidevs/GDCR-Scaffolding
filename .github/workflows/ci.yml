@@ -102,3 +102,14 @@ jobs:
       - name: run unit tests
         run: go test
         working-directory: golang/src/life
+
+  test-swift:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: run unit tests
+        run: ./test.sh
+        working-directory: swift
