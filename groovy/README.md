@@ -5,4 +5,4 @@
 
 ## To run tests
 
-* `gradle test`
+* `./gradlew test`

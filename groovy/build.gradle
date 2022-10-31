@@ -2,11 +2,18 @@
 apply plugin: 'groovy'
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.9'
+    implementation 'org.codehaus.groovy:groovy-all:2.4.9'
 
-    compile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }
+
+test {
+    testLogging {
+        events "passed", "failed"
+    }
+}
+
