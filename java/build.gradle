@@ -2,9 +2,16 @@
 apply plugin: 'java'
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    compile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }
+
+test {
+    testLogging {
+        events "passed", "failed"
+    }
+}
+
