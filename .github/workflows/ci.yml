@@ -103,6 +103,22 @@ jobs:
         run: go test
         working-directory: golang/src/life
 
+  test-clojure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: install leiningen
+        run: apt install leiningen
+
+      - name: run unit tests
+        run: lein test
+        working-directory: clojure
+
+# --------------------------------------
+
 # not working due to ancient project layout (not supported)
 #  test-swift:
 #    runs-on: ubuntu-latest
