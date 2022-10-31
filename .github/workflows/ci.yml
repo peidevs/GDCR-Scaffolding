@@ -54,3 +54,26 @@ jobs:
         run: ./gradlew test
         working-directory: java
 
+  test-python:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: run unit tests
+        run: python test_gol.py
+        working-directory: python
+
+  test-ruby:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: run unit tests
+        run: rake test
+        working-directory: ruby
