@@ -95,10 +95,6 @@ jobs:
       - name: get Go 
         uses: actions/setup-go@v3
 
-      - name: init module
-        run: go mod init src/life
-        working-directory: golang
-
       - name: run unit tests
         run: go test
-        working-directory: golang
+        working-directory: golang/src/life
