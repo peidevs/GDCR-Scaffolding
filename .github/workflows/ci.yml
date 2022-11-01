@@ -152,6 +152,7 @@ jobs:
 
       - name: install
         run: npm install
+        working-directory: javascript
 
       - name: test
         run: npm run test-single-run
