@@ -1,3 +1,3 @@
-xbuild nunit.csproj
+msbuild nunit.csproj
 
-xbuild nunit.csproj /t:test
+msbuild nunit.csproj /t:test
