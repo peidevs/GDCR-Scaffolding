@@ -153,7 +153,16 @@ jobs:
         uses: actions/checkout@v3
  
       - name: install NUnit
-        run: nuget install NUnit.Runners -o ./nunit -version 2.6.4 
+        run: |
+          nuget install NUnit.Runners -o ./nunit -version 2.6.4 
+          mkdir /nunit 
+          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit-console.exe /nunit 
+          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit-console.exe.config /nunit 
+          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit.framework.dll /nunit 
+          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit-console-runner.dll /nunit 
+          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.util.dll /nunit 
+          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.core.interfaces.dll /nunit 
+          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.core.dll /nunit 
         working-directory: csharp
 
       - name: run unit tests
