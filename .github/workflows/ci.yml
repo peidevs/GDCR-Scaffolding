@@ -152,6 +152,10 @@ jobs:
       - name: get code
         uses: actions/checkout@v3
  
+      - name: install NUnit
+        run: nuget install NUnit.Runners -o ./nunit -version 2.6.4 
+        working-directory: csharp
+
       - name: run unit tests
         run: ./run_tests.sh
         working-directory: csharp
