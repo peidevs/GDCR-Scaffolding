@@ -1,8 +1,9 @@
 
 ## Requirements
 
-* install [Gradle](https://gradle.org/gradle-download/)
+* install [Java](https://www.java.com/en/download/)
+    - JDK 17+
 
 ## To run tests
 
-* `gradle test`
+* `./gradlew test`
