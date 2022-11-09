@@ -20,6 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: cache dependencies (Gradle)
+        id: cache
         uses: actions/cache@v3
         with:
           path: |
@@ -30,8 +31,13 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: tickle Gradle
+        if: steps.cache.outputs.cache-hit != 'true'
         run: ./gradlew --version
         working-directory:  java
+
+      - name: TRACER cache hit
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: echo "TRACER cache hit OK"
 
   test-groovy:
     needs: cache-gradle
