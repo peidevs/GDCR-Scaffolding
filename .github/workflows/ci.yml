@@ -39,6 +39,81 @@ jobs:
         if: steps.cache.outputs.cache-hit == 'true'
         run: echo "TRACER cache hit OK"
 
+  test-c:
+      runs-on: ubuntu-latest
+
+      steps:
+          - name: get code
+            uses: actions/checkout@v3
+
+          - name: run unit tests
+            run: ./run_tests.sh
+            working-directory: c
+
+  test-clojure:
+      runs-on: ubuntu-latest
+
+      steps:
+          - name: get code
+            uses: actions/checkout@v3
+
+          - name: Install clojure tools
+            uses: DeLaGuardo/setup-clojure@10.0
+            with:
+                # Install just one or all simultaneously
+                # The value must indicate a particular version of the tool, or use 'latest'
+                # to always provision the latest version
+                cli: 1.10.1.693              # Clojure CLI based on tools.deps
+                lein: 2.9.1                  # Leiningen
+
+          - name: run unit tests
+            run: lein test
+            working-directory: clojure
+
+# not working: project is based on ancient Mono and not Dotnet Core (!!)
+#
+#  test-csharp:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: get code
+#        uses: actions/checkout@v3
+#
+#      - name: install NUnit
+#        run: |
+#          nuget install NUnit.Runners -o ./nunit -version 2.6.4
+#          mkdir /nunit
+#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit-console.exe /nunit
+#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit-console.exe.config /nunit
+#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit.framework.dll /nunit
+#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit-console-runner.dll /nunit
+#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.util.dll /nunit
+#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.core.interfaces.dll /nunit
+#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.core.dll /nunit
+#        working-directory: csharp
+#
+#      - name: run unit tests
+#        run: ./run_tests.sh
+#        working-directory: csharp
+
+  test-golang:
+      runs-on: ubuntu-latest
+
+      steps:
+          - name: get code
+            uses: actions/checkout@v3
+
+          - name: get Go
+            uses: actions/setup-go@v3
+
+          - name: init module
+            run: go mod init golang
+            working-directory: golang
+
+          - name: run unit tests
+            run: go test
+            working-directory: golang/src/life
+
   test-groovy:
     needs: cache-gradle
     runs-on: ubuntu-latest
@@ -95,6 +170,21 @@ jobs:
         run: ./gradlew test
         working-directory: java
 
+#  test-javascript:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: get code
+#        uses: actions/checkout@v3
+#
+#      - name: install
+#        run: npm install
+#        working-directory: javascript
+#
+#      - name: test
+#        run: npm run test-single-run
+#        working-directory: javascript
+
   test-kotlin:
     needs: cache-gradle
     runs-on: ubuntu-latest
@@ -145,55 +235,6 @@ jobs:
         run: rake test
         working-directory: ruby
 
-  test-c:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: get code
-        uses: actions/checkout@v3
-
-      - name: run unit tests
-        run: ./run_tests.sh
-        working-directory: c
-
-  test-golang:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: get code
-        uses: actions/checkout@v3
-
-      - name: get Go 
-        uses: actions/setup-go@v3
-
-      - name: init module
-        run: go mod init golang 
-        working-directory: golang
-
-      - name: run unit tests
-        run: go test
-        working-directory: golang/src/life
-
-  test-clojure:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: get code
-        uses: actions/checkout@v3
-
-      - name: Install clojure tools
-        uses: DeLaGuardo/setup-clojure@10.0
-        with:
-          # Install just one or all simultaneously
-          # The value must indicate a particular version of the tool, or use 'latest'
-          # to always provision the latest version
-          cli: 1.10.1.693              # Clojure CLI based on tools.deps
-          lein: 2.9.1                  # Leiningen
-
-      - name: run unit tests
-        run: lein test
-        working-directory: clojure
-
   test-scala:
     needs: cache-gradle
     runs-on: ubuntu-latest
@@ -221,53 +262,6 @@ jobs:
       - name: run unit tests
         run: ./gradlew test
         working-directory: scala
-
-# --------------------------------------
-
-# not working: project is based on ancient Mono and not Dotnet Core (!!)
-#
-#  test-csharp:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: get code
-#        uses: actions/checkout@v3
-# 
-#      - name: install NUnit
-#        run: |
-#          nuget install NUnit.Runners -o ./nunit -version 2.6.4 
-#          mkdir /nunit 
-#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit-console.exe /nunit 
-#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit-console.exe.config /nunit 
-#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/nunit.framework.dll /nunit 
-#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit-console-runner.dll /nunit 
-#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.util.dll /nunit 
-#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.core.interfaces.dll /nunit 
-#          cp /tmp/nunit/NUnit.Runners.2.6.4/tools/lib/nunit.core.dll /nunit 
-#        working-directory: csharp
-#
-#      - name: run unit tests
-#        run: ./run_tests.sh
-#        working-directory: csharp
-
-# not working: ancient package.json needs to be rebuilt
-#
-#  test-javascript:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: get code
-#        uses: actions/checkout@v3
-#
-#      - name: install
-#        run: npm install
-#        working-directory: javascript
-#
-#      - name: test
-#        run: npm run test-single-run
-#        working-directory: javascript
-
-
 
 # not working due to ancient project layout (not supported)
 #
