@@ -1,0 +1,4 @@
+root = true
+
+[{*.json,*.yml}]
+indent_size = 4
