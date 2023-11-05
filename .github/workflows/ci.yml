@@ -213,6 +213,28 @@ jobs:
         run: ./gradlew test
         working-directory: kotlin
 
+  test-php:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: curl, libxml, mbstring
+          coverage: none
+
+      - name: Install dependencies
+        working-directory: php
+        run: composer update --prefer-stable --prefer-dist --no-interaction
+
+      - name: Execute tests
+        working-directory: php
+        run: composer test
+
   test-python:
     runs-on: ubuntu-latest
 

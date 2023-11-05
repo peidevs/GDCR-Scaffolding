@@ -1,19 +1,10 @@
 
-### Info
+## Requirements
 
-* uses [this](https://hub.docker.com/r/phpunit/phpunit/) Docker image
-    * as of AUG 2017, uses PHPUnit 6.0.x and PHP 7.0
+* install [PHP](https://www.php.net/manual/en/install.php)
+    - PHP 7.4+
+* install [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
 
-### Setup
+## To run tests
 
-* install Docker
-* in Docker window, `cd` to appropriate directory
-
-<pre>
-docker pull phpunit/phpunit
-chmod 744 ./run_tests.sh
-</pre>
-
-### To run tests
-
-* `./run_tests.sh`
+* `composer test`
