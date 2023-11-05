@@ -2,6 +2,8 @@
   "name": "gdcr-js-scaffolding",
   "version": "1.0.0",
   "description": "JavaScript Scaffolding for GDCR",
+  "author": "PEI Devs",
+  "license": "ISC",
   "main": "karma.config.js",
   "directories": {
     "test": "tests"
@@ -18,7 +20,5 @@
   "scripts": {
     "test": "karma start karma.config.js",
     "test-single-run": "karma start karma.config.js --single-run"
-  },
-  "author": "PEI Devs",
-  "license": "ISC"
+  }
 }
