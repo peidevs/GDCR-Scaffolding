@@ -1,6 +1,6 @@
 
 ## GDCR-Scaffolding
-Starter projects in various languages for [Global Day of Coderetreat](http://globalday.coderetreat.org/)
+Starter projects in various languages for the [Global Day of Coderetreat](https://www.coderetreat.org/).
 
 ### Motivation
 
