@@ -1,5 +1,4 @@
 // These projects are tested by Travis CI.
 //
-// TODO: figure out the problem with Ruby (probably a requirement
-// within Rake)
+// TODO: figure out the problem with Ruby (probably a requirement within Rake)
 include 'groovy','java','javascript','kotlin','python','scala'
