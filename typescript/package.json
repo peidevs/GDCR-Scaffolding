@@ -1,7 +1,7 @@
 {
   "name": "game-of-life",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript Scaffolding for GDCR",
   "author": "PEI Devs",
   "license": "ISC",
   "main": "src/index.ts",
