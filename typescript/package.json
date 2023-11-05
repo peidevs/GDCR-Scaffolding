@@ -19,14 +19,14 @@
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
   },
   "devDependencies": {
-    "@types/jest": "^20.0.8",
-    "@types/node": "^8.0.28",
-    "concurrently": "^3.5.0",
-    "jest": "^21.0.2",
-    "nodemon": "^1.12.0",
+    "@types/jest": "^28.1.0",
+    "@types/node": "^18.0.0",
+    "concurrently": "^3.6.0",
+    "jest": "^26.2.0",
+    "nodemon": "^1.19.2",
     "shelljs": ">=0.8.5",
-    "ts-jest": "^21.0.0",
-    "typescript": "^2.5.2"
+    "ts-jest": "^26.2.0",
+    "typescript": "^4.2.4"
   },
   "dependencies": {
   }
