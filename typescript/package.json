@@ -8,15 +8,15 @@
   "scripts": {
     "start": "npm run build && npm run watch",
     "build": "npm run build-ts",
-    "serve": "./node_modules/.bin/nodemon build/index.js",
-    "watch": "./node_modules/.bin/concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve\"",
-    "test": "./node_modules/.bin/jest --forceExit --config jest.json",
-    "test-watch": "./node_modules/.bin/jest --watch --config jest.json",
-    "build-ts": "./node_modules/.bin/tsc",
-    "watch-ts": "./node_modules/.bin/tsc -w",
+    "serve": "nodemon build/index.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve\"",
+    "test": "jest --forceExit --config jest.json --colors",
+    "test-watch": "jest --watch --config jest.json --colors",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
     "debug": "npm run build && npm run watch-debug",
-    "serve-debug": "./node_modules/.bin/nodemon --inspect build/index.js",
-    "watch-debug": "./node_modules/.bin/concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
+    "serve-debug": "nodemon --inspect build/index.js",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
   },
   "devDependencies": {
     "@types/jest": "^20.0.8",
@@ -29,6 +29,5 @@
     "typescript": "^2.5.2"
   },
   "dependencies": {
-
   }
 }
