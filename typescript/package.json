@@ -2,6 +2,8 @@
   "name": "game-of-life",
   "version": "1.0.0",
   "description": "",
+  "author": "PEI Devs",
+  "license": "ISC",
   "main": "src/index.ts",
   "scripts": {
     "start": "npm run build && npm run watch",
@@ -16,8 +18,6 @@
     "serve-debug": "./node_modules/.bin/nodemon --inspect build/index.js",
     "watch-debug": "./node_modules/.bin/concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/jest": "^20.0.8",
     "@types/node": "^8.0.28",
