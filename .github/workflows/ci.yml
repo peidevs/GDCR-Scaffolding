@@ -1,12 +1,11 @@
-
 name: run tests on projects
 
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -33,42 +32,42 @@ jobs:
       - name: tickle Gradle
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./gradlew --version
-        working-directory:  java
+        working-directory: java
 
       - name: TRACER cache hit
         if: steps.cache.outputs.cache-hit == 'true'
         run: echo "TRACER cache hit OK"
 
   test-c:
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-      steps:
-          - name: get code
-            uses: actions/checkout@v3
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
 
-          - name: run unit tests
-            run: ./run_tests.sh
-            working-directory: c
+      - name: run unit tests
+        run: ./run_tests.sh
+        working-directory: c
 
   test-clojure:
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-      steps:
-          - name: get code
-            uses: actions/checkout@v3
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
 
-          - name: Install clojure tools
-            uses: DeLaGuardo/setup-clojure@10.0
-            with:
-                # Install just one or all simultaneously
-                # The value must indicate a particular version of the tool, or use 'latest'
-                # to always provision the latest version
-                cli: 1.10.1.693              # Clojure CLI based on tools.deps
-                lein: 2.9.1                  # Leiningen
+      - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@10.0
+        with:
+          # Install just one or all simultaneously
+          # The value must indicate a particular version of the tool, or use 'latest'
+          # to always provision the latest version
+          cli: 1.10.1.693              # Clojure CLI based on tools.deps
+          lein: 2.9.1                  # Leiningen
 
-          - name: run unit tests
-            run: lein test
-            working-directory: clojure
+      - name: run unit tests
+        run: lein test
+        working-directory: clojure
 
 # not working: project is based on ancient Mono and not Dotnet Core (!!)
 #
@@ -97,22 +96,22 @@ jobs:
 #        working-directory: csharp
 
   test-golang:
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-      steps:
-          - name: get code
-            uses: actions/checkout@v3
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
 
-          - name: get Go
-            uses: actions/setup-go@v3
+      - name: get Go
+        uses: actions/setup-go@v3
 
-          - name: init module
-            run: go mod init golang
-            working-directory: golang
+      - name: init module
+        run: go mod init golang
+        working-directory: golang
 
-          - name: run unit tests
-            run: go test
-            working-directory: golang/src/life
+      - name: run unit tests
+        run: go test
+        working-directory: golang/src/life
 
   test-groovy:
     needs: cache-gradle
