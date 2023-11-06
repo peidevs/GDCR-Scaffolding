@@ -296,3 +296,23 @@ jobs:
 #      - name: run unit tests
 #        run: ./test.sh
 #        working-directory: swift
+
+  test-typescript:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js 18.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        working-directory: typescript
+        run: npm install
+
+      - name: Execute tests
+        working-directory: typescript
+        run: npm test
