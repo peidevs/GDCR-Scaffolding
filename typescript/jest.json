@@ -6,10 +6,10 @@
     "js"
   ],
   "transform": {
-    "^.+\\.(ts|tsx)$": "./node_modules/ts-jest/preprocessor.js"
+    "^.+\\.(ts|tsx)$": "ts-jest"
   },
   "testPathIgnorePatterns": [
-    "/node_modeles/",
+    "/node_modules/",
     "/build/"
   ],
   "testEnvironment": "node"
