@@ -1,7 +1,6 @@
-
 #include <stdio.h>
 #include "minunit.h"
- 
+
 /* ---------------------------- */
 /* code */
 
@@ -13,13 +12,13 @@ int foo(int x) {
 /* test */
 
 int tests_run = 0;
- 
+
 static char * test_foo() {
     int result = foo(5150);
     mu_assert("error, result != 5150", result == 5150);
     return 0;
 }
- 
+
 static char * all_tests() {
     mu_run_test(test_foo);
     return 0;
@@ -27,7 +26,7 @@ static char * all_tests() {
 
 /* ---------------------------- */
 /* main */
- 
+
 int main(int argc, char **argv) {
     char *result = all_tests();
 

@@ -1,5 +1,4 @@
-
-// http://peidevs.github.io 
+// http://peidevs.github.io
 
 import XCTest
 @testable import ConwayGameOfLife

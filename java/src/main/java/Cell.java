@@ -1,4 +1,3 @@
-
 // http://peidevs.github.io
 
 public class Cell {
@@ -11,5 +10,5 @@ public class Cell {
 
     public void setFoo(int foo) {
         this.foo = foo;
-    }    
+    }
 }

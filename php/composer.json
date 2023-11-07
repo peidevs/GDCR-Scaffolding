@@ -1,0 +1,22 @@
+{
+    "name": "peidevs/gdcr-scaffolding",
+    "desription": "PHP Scaffolding for GDCR",
+    "authors": [
+        {
+            "name": "PEI Devs"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1|^10.0"
+    },
+    "autoload": {
+        "classmap": ["src"]
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests --no-coverage",
+        "test-coverage": "vendor/bin/phpunit tests --coverage-html build/coverage"
+    }
+}

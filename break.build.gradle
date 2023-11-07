@@ -13,7 +13,7 @@ def addShellPrefix = { command ->
 def runCommand = { command, workingDir ->
     def process = new ProcessBuilder(addShellPrefix(command))
                                     .directory(workingDir)
-                                    .redirectErrorStream(true) 
+                                    .redirectErrorStream(true)
                                     .start()
     process.inputStream.eachLine {println it}
     process.waitFor()

@@ -1,4 +1,3 @@
-
 # http://peidevs.github.io
 
 require "./lib/cell.rb"

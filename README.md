@@ -1,6 +1,6 @@
 
 ## GDCR-Scaffolding
-Starter projects in various languages for [Global Day of Coderetreat](http://globalday.coderetreat.org/)
+Starter projects in various languages for the [Global Day of Coderetreat](https://www.coderetreat.org/).
 
 ### Motivation
 
@@ -13,7 +13,7 @@ Starter projects in various languages for [Global Day of Coderetreat](http://glo
 
 ### Github Actions
 
-* Some of the starter projects are validated via Github Actions. see [this file](./.github/workflows/ci.yml)
+* Some of the starter projects are validated via Github Actions (see [this file](./.github/workflows/ci.yml)).
 
 ### About Us
 

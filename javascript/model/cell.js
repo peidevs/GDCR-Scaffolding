@@ -1,7 +1,5 @@
-
 // http://peidevs.github.io
 
-var Cell = function(options) {
-    this.foo = options.foo;
+var Cell = function (options) {
+  this.foo = options.foo;
 };
-
