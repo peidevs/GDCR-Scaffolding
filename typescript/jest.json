@@ -9,8 +9,8 @@
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
   "testPathIgnorePatterns": [
-    "/node_modules/",
-    "/build/"
+    "/build/",
+    "/node_modules/"
   ],
   "testEnvironment": "node"
 }
